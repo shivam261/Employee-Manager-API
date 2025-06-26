@@ -5,7 +5,7 @@ manager_bp=Blueprint('manager_routes', __name__, url_prefix='/managers')
 limiter.limit("20 per minute")(manager_bp)
 
 
-@manager_bp.route('/', methods=['GET','POST'])
+@manager_bp.route('', methods=['GET','POST'])
 def get_managers():
     if request.method == 'GET':
         return manager_controller.get_all_managers()

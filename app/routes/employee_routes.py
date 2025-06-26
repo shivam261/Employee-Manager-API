@@ -13,7 +13,7 @@ def get_employee(employee_id):
     elif request.method == 'DELETE':
         return employee_controller.delete_employee(employee_id)
 
-@employee_bp.route('/', methods=['POST','GET'])
+@employee_bp.route('', methods=['POST','GET'])
 def create_employee():
     if request.method == 'GET':
         return employee_controller.get_all_employees()
