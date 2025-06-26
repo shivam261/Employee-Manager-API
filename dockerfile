@@ -23,6 +23,7 @@ COPY --from=build /install /usr/local
 COPY . .
 
 COPY entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
 ENV PYTHONUNBUFFERED=1
 ENV FLASK_ENV=production
 
