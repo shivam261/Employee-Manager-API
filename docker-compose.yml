@@ -10,21 +10,7 @@ services:
       - production.env
     environment:
       - ENV_FILE=production.env
-    depends_on:
-      - db
+    
+    dns:
+      - 8.8.8.8
 
-  db:
-    image: postgres
-    container_name: postgres_db
-    restart: always
-    environment:
-      POSTGRES_DB: gron
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
-    ports:
-      - "5432:5432"
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-
-volumes:
-  pgdata:
