@@ -3,7 +3,8 @@
 A scalable, production-ready REST API built with **Flask** that manages employees and their managers. It is designed using clean architecture principles like the **Factory pattern**, **Repository-Service pattern**, and includes modern backend features like **Redis caching**, **rate limiting**, and **Dockerized deployment**.
 
 ---
-
+## API Documentation 
+See [Postman Collection](https://documenter.getpostman.com/view/33373776/2sB2xECp2v) for full details and test requests.
 ## 🚀 Features
 
 - ✅ CRUD operations for **Employees** and **Managers**
