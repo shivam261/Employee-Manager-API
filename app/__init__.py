@@ -9,7 +9,8 @@ import os
 
 
 
-load_dotenv("development.env")
+env_file = os.getenv("ENV_FILE", "development.env")
+load_dotenv(env_file)
 db = SQLAlchemy()
 cache =Cache()
 migrate = Migrate()

@@ -22,10 +22,11 @@ WORKDIR /app
 COPY --from=build /install /usr/local
 COPY . .
 
+COPY entrypoint.sh /app/entrypoint.sh
 ENV PYTHONUNBUFFERED=1
 ENV FLASK_ENV=production
 
 EXPOSE 5000
 
 # Use Gunicorn for production
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "run:app"]
+ENTRYPOINT ["/app/entrypoint.sh"]
