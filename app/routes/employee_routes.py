@@ -2,6 +2,7 @@ from flask import Blueprint, request
 from app import limiter
 from app.controllers import employee_controller
 employee_bp=Blueprint('employee_routes', __name__, url_prefix='/employees')
+employee_bp.strict_slashes = False
 limiter.limit("10 per minute")(employee_bp)
 
 @employee_bp.route('/<int:employee_id>', methods=['GET', 'PATCH', 'DELETE'])

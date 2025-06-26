@@ -2,6 +2,7 @@ from flask import Blueprint, request
 from app import limiter
 from app.controllers import manager_controller
 manager_bp=Blueprint('manager_routes', __name__, url_prefix='/managers')
+manager_bp.strict_slashes = False
 limiter.limit("20 per minute")(manager_bp)
 
 
